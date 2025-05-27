@@ -1,22 +1,24 @@
 # AMEX CSV Analyzer
 
-This Python script processes and summarizes CSV transaction files exported from American Express. It aggregates spending and reward points data by card and multiplier category, then outputs a clean, formatted summary both to the console and a timestamped CSV file.
+This Python script analyzes American Express transaction CSVs by card and reward multiplier (e.g. `4.0x`). It processes multiple exported statements and provides totals for spending and rewards per card, distinguishing `4.0x` multipliers from regular purchases.
 
-## Features
+---
 
-- Merges all CSVs in a specified directory.
-- Cleans and standardizes monetary and points/miles values.
-- Identifies and separates `4.0x` multiplier transactions from others.
-- Groups totals by individual card number and multiplier category.
-- Outputs formatted results (currency, commas) to console.
-- Saves the summary as `export_results_<ISO_DATETIME>.csv`.
+## 📥 How to Export CSVs from Amex
 
-## Requirements
+1. Visit [https://global.americanexpress.com/rewards/summary](https://global.americanexpress.com/rewards/summary)
+2. Use the calendar to select the **first and last day** of each month.
+3. Click the download icon to export the CSV for that month.
+4. Repeat this for each month you'd like to analyze.
+5. Place all the downloaded `.csv` files into a single folder.
 
-- Python 3.6+
-- `pandas`
+<img src="howtouse.png" alt="Instructions Screenshot" width="700"/>
 
-Install dependencies:
+---
 
-```bash
-pip install pandas
+## ✅ Features
+
+- Merges multiple CSVs into one dataset
+- Cleans and standardizes dollar amounts and points/miles
+- Groups and totals by card number and multiplier type (`4.0x` vs. others)
+- Outputs formatted results to
